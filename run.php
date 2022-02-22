@@ -3,18 +3,22 @@ error_reporting(0);
 $zone = json_decode(file_get_contents("http://ip-api.com/json"),1)["timezone"];if($zone){date_default_timezone_set($zone);}
 $reg = "https://bit.ly/3GOoZP5";
 $server = "https://pastebin.com/raw/RZxwy6dr";
-$a = ["iewil","cryptowin","1.0","https://youtu.be/Dk-v5NiFNJE"];
+$a = ["iewil","cryptowin","1.1","https://youtu.be/fUP7f0AOx74"];
 $disable = Cl("Script mati karena web update / scam!","m")."\nSupport Channel saya dengan cara\nSubscribe ".Cl("https://www.youtube.com/c/iewil","k")."\nkarena subscribe itu gratis :D\nUntuk mendapatkan info Script terbaru\nJoin grub via telegram ~> ".Cl("https://t.me/Iewil_G","c")."\nðŸ‡®ðŸ‡© ".Cl("Family-Team-Function-INDO","b")."\n";
 
 function R($url, $httpheader = 0, $post = 0, $proxy = 0){$ch = curl_init();curl_setopt($ch, CURLOPT_URL, $url);curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);curl_setopt($ch, CURLOPT_COOKIE,TRUE);
 	//curl_setopt($ch, CURLOPT_COOKIEFILE,"cookie.txt");curl_setopt($ch, CURLOPT_COOKIEJAR,"cookie.txt");
 	if($post){curl_setopt($ch, CURLOPT_POST, true);curl_setopt($ch, CURLOPT_POSTFIELDS, $post);}if($httpheader){curl_setopt($ch, CURLOPT_HTTPHEADER, $httpheader);}if($proxy){curl_setopt($ch, CURLOPT_HTTPPROXYTUNNEL, true);curl_setopt($ch, CURLOPT_PROXY, $proxy);}curl_setopt($ch, CURLOPT_HEADER, true);$response = curl_exec($ch);$httpcode = curl_getinfo($ch);if(!$httpcode) return "Curl Error : ".curl_error($ch); else{$header = substr($response, 0, curl_getinfo($ch, CURLINFO_HEADER_SIZE));$body = substr($response, curl_getinfo($ch, CURLINFO_HEADER_SIZE));curl_close($ch);return array($header, $body)[1];}}
-function Sh(){global $a,$server,$disable;$script = file_get_contents($server);$status = explode('|',explode('#'.$a[1].':',$script)[1])[0];if($status == "on"){RETRY:$pass = "PERTAMA";$read = file_get_contents("key.txt");if($read == $pass){}else{Bn();$l1 = Cl(" it takes only 1 time password to \n use the script","h")."\n";$l2 = Cl(" get the password in this video ","h")."\n\n";$l3 = Cl(" Link : ".$a[3],"m")."\n\n";echo Sl($l1.$l2.$l3);$p = readline(Cl(" Password : ","h"));$px = trim(strtoupper($p));if($pass == $px){file_put_contents("key.txt",$px);}else{echo Cl(" Password salah!","m")."\n";Li();goto RETRY;}}}elseif($status == "off" or $status == null){Bn();echo Cl("The script is disabled","m")."\n\n";echo Sl($disable);exit;}}	
+function Sh(){global $a,$server,$disable;$script = file_get_contents($server);$status = explode('|',explode('#'.$a[1].':',$script)[1])[0];if($status == "on"){RETRY:$pass = "cwinv2";$read = file_get_contents("key.txt");if($read == $pass){}else{Bn();$l1 = Cl(" it takes only 1 time password to \n use the script","h")."\n";$l2 = Cl(" get the password in this video ","h")."\n\n";$l3 = Cl(" Link : ".$a[3],"m")."\n\n";echo Sl($l1.$l2.$l3);$p = readline(Cl(" Password : ","h"));$px = trim(strtoupper($p));if($pass == $px){file_put_contents("key.txt",$px);}else{echo Cl(" Password salah!","m")."\n";Li();goto RETRY;}}}elseif($status == "off" or $status == null){Bn();echo Cl("The script is disabled","m")."\n\n";echo Sl($disable);exit;}}	
 function Sv($namadata){if(file_exists($namadata)){$datauser=file_get_contents($namadata);}else{$datauser=readline("Input ".$namadata." > ");echo "\n";file_put_contents($namadata,$datauser);}return $datauser;}
 function Cl($str,$color){if($color=="rand"){$color=['h','k','b','u','m'][array_rand(['h','k','b','u','m'])];}$war=array('rw'=>"\033[107m\033[1;31m",'rt'=>"\033[106m\033[1;31m",'ht'=>"\033[0;30m",'p'=>"\033[1;37m",'a'=>"\033[1;30m",'m'=>"\033[1;31m",'h'=>"\033[1;32m",'k'=>"\033[1;33m",'b'=>"\033[1;34m",'u'=>"\033[1;35m",'c'=>"\033[1;36m",'rr'=>"\033[101m\033[1;37m",'rg'=>"\033[102m\033[1;34m",'ry'=>"\033[103m\033[1;30m",'rp1'=>"\033[104m\033[1;37m",'rp2'=>"\033[105m\033[1;37m");return $war[$color].$str."\033[0m";}
 function Sl($msg){$slow = str_split($msg);foreach( $slow as $slowmo ){echo $slowmo; usleep(70000);}}
 function Li(){$len = 36;$var = '─';echo str_repeat($var,$len)."\n";}
-function Bn(){global $server,$a,$reg;$script = file_get_contents($server);$status = explode('|',explode('#'.$a[1].':',$script)[1])[0];system('clear');$m="\033[1;31m";$p="\033[1;37m";$k="\033[1;33m";$h="\033[1;32m";$u="\033[1;35m";$b="\033[1;34m";$c="\033[1;36m";$mp="\033[101m\033[1;37m";$cl="\033[0m";$mm="\033[101m\033[1;31m";$hp="\033[1;7m";if($status == "on"){$st = $h."Online";}elseif($status == "off" or $status == null){$st = $m."Offline";}$z=trim(strtoupper($a[1]));$x=18;$y=strlen($z);$line=str_repeat('_',$x-$y);echo "\n{$m}[{$p}Script{$m}]->{$k}[".$h.$z."{$k}]-[".$h.$a[2].$k."]".$p.$line.".\n{$u}.__              .__.__ 	    {$p}| \n{$u}|__| ______  _  _|__|  |   {$st}{$u} \n|  |/ __ \ \/ \/ /  |  |\n|  \  ___/\     /|  |  |__\n|__|\___  >\/\_/ |__|____/\n        \/\n{$mm}[{$mp}▶{$mm}]{$cl} {$k}https://www.youtube.com/c/iewil\n{$c}{$hp} >_{$cl}{$b} Team-Function-INDO\n{$p}────────────────────────────────────\nLink Regist : ".$reg."\n\n";}
+function Bn(){global $server,$a,$reg,$disable;$script = file_get_contents($server);$status = explode('|',explode('#'.$a[1].':',$script)[1])[0];system('clear');$m="\033[1;31m";$p="\033[1;37m";$k="\033[1;33m";$h="\033[1;32m";$u="\033[1;35m";$b="\033[1;34m";$c="\033[1;36m";$mp="\033[101m\033[1;37m";$cl="\033[0m";$mm="\033[101m\033[1;31m";$hp="\033[1;7m";if($status == "on"){$st = $h."Online";}elseif($status == "off" or $status == null){$st = $m."Offline";}$z=trim(strtoupper($a[1]));$x=18;$y=strlen($z);$line=str_repeat('_',$x-$y);echo "\n{$m}[{$p}Script{$m}]->{$k}[".$h.$z."{$k}]-[".$h.$a[2].$k."]".$p.$line.".\n{$u}.__              .__.__ 	    {$p}| \n{$u}|__| ______  _  _|__|  |   {$st}{$u} \n|  |/ __ \ \/ \/ /  |  |\n|  \  ___/\     /|  |  |__\n|__|\___  >\/\_/ |__|____/\n        \/\n{$mm}[{$mp}▶{$mm}]{$cl} {$k}https://www.youtube.com/c/iewil\n{$c}{$hp} >_{$cl}{$b} Team-Function-INDO\n{$p}────────────────────────────────────\nLink Regist : ".$reg."\n\n";
+if($status == "off" or $status == null){
+echo Sl($disable);exit;
+}
+}
 function Vision($img){$content=base64_encode(file_get_contents($img));$head=["content-type: application/json"];$data=json_encode(["requests"=>[["image"=>["content"=>$content],"features"=>[["type"=>"TEXT_DETECTION"]]]]]);$result=R("https://vision.googleapis.com/v1/images:annotate?key=AIzaSyC3y-Em42htSB8UEZPqptJ78rlvL58_h6Y",$head,$data);$respon=strpos($result,'Enter the following:\n');if($respon){$respon=substr($result,$respon);$respon=str_replace('Enter the following:\n','',$respon);$respon= preg_replace("/[^a-zA-Z]/", "",str_replace('\n','',substr($respon,strpos($respon,'"'))));}if(strlen($respon) > 25){}else{return $respon;}}
 function Oc($img,$img2){$apikey=Ao();$respon=Vision($img);if($respon==""){system('convert '.$img.' -gravity North -chop x15 '.$img2.' 2>/dev/null');$hasil=json_decode(shell_exec('curl --silent -H "apikey:'.$apikey.'" --form "file=@'.$img2.'" --form "language=eng" --form "ocrengine=2" --form "isOverlayRequired=false" --form "iscreatesearchablepdf=false" https://api.ocr.space/Parse/Image'))->ParsedResults[0]->ParsedText;$respon = preg_replace("/[^a-zA-Z]/","", $hasil);}return $respon;}
 function Ao(){$a = "0123456789abcdef";$b = substr(str_shuffle($a), 0, 10);$c = $b."88957";return $c;}
@@ -268,8 +272,8 @@ while(true){
 			}
 		}
 	}else{
-		echo Cl("Faucet habis\n","m");Li();
-		goto menu;
+		sleep(5);
+		goto faucet;
 	}
 }
 
@@ -283,7 +287,7 @@ while(true){
 	$token=explode('"',explode('name="token" value="',$r1)[1])[0];
 	if($tmr){tmr($tmr);}
 	$r2=pauto($token);
-	$ss = trim(explode("</div>",explode("Autofaucet completed you will receive",$r2)[1])[0]);
+	$ss = trim(explode("has",explode("Good job!', '",$r2)[1])[0]);
 	if($ss){
 		echo Cl("Success    ~> ","h").Cl($ss,"k")."\n";
 		echo Cl("Balance    ~> ","h").Cl(dash()["balance"],"k")."\n";
@@ -301,7 +305,12 @@ $misi=explode('<tr>',$r1);
 for($x=2;$x<count($misi);$x++){
 	$y=$x-1;$var=24;$len=" ";
 	$ms=explode('</td>',explode('<td>',$misi[$x])[1])[0];
-	$mg=strlen($ms);$varmg=$var-$mg;$spc=str_repeat($len,$varmg);
+	$mg=strlen($ms);
+	if($mg>24){
+		$ms = substr($ms,0,22);
+		$mg=strlen($ms);
+	}
+	$varmg=$var-$mg;$spc=str_repeat($len,$varmg);
 	$ex=explode('</div>',explode('aria-valuemax="100">',$misi[$x])[1])[0];
 	echo Cl($y." > ","m").Cl($ms,"h").$spc."~> ".Cl($ex,"k")."\n";
 }
